@@ -1,9 +1,12 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'default-fallback-key-tests')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = False
 
@@ -90,10 +93,11 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_URL = '/static_backend/'
+STATIC_URL = 'static_backend'
+STATIC_ROOT = BASE_DIR / 'static_backend'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media_backend'
+MEDIA_ROOT = BASE_DIR / 'var/www/infra_sprint1/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
