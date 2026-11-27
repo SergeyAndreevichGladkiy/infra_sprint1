@@ -96,14 +96,14 @@ USE_TZ = True
 STATIC_URL = 'static_backend'
 STATIC_ROOT = BASE_DIR / 'static_backend'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'var/www/infra_sprint1/media'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = '/var/www/infra_sprint1/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated', 
+        'rest_framework.permissions.IsAuthenticated',
     ],
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
