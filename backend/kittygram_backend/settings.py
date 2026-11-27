@@ -2,9 +2,9 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
@@ -96,8 +96,8 @@ USE_TZ = True
 STATIC_URL = 'static_backend'
 STATIC_ROOT = BASE_DIR / 'static_backend'
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = '/var/www/infra_sprint1/media'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
